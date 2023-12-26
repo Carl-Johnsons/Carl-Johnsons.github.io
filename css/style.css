@@ -35,6 +35,7 @@
     --crisp-icon-width-sm: 37px;
     --crisp-icon-height-sm: 28px;
 
+
     --lays-snack-chip-img-background-width-sm: clamp(375px, 70vw, 730px);
     --lays-snack-chip-img-background-height-sm: clamp(375px, 70vw, 730px);
 
@@ -43,7 +44,10 @@
     --lays-snack-chip-img-width: 495.616px;
     --lays-snack-chip-img-height: 567.639px;
 
-
+    --chip-img-width-sm: 75px;
+    --chip-img-height-sm: 33px;
+    --chip-img-width: clamp(200px, 50%, 333px);
+    --chip-img-height: clamp(100px, 80%, 145px);
     /* sizing */
     --sm: 576px;
     --md: 768px;
@@ -122,18 +126,17 @@ img.crisp-icon {
 }
 
 .item-detail {
-    grid-template-rows: 1fr 0.5fr 0.5fr 3fr;
+    grid-template-rows: 0.75fr 4fr 4fr;
     grid-template-columns: repeat(auto-fit, minmax(0, 1fr));
     grid-template-areas:
-        'slogan .'
-        '. chip-img'
-        'item-detail-img chip-img'
-        'item-detail-img item-info';
+        'slogan slogan'
+        'item-detail-img item-detail-img'
+        'item-info item-info';
+    gap: 20px 0px;
 }
 
 .item-detail .slogan {
     grid-area: slogan;
-    padding: 0 70px;
 }
 
 .item-detail .item-detail-img {
@@ -143,9 +146,11 @@ img.crisp-icon {
 }
 
 .item-detail .chip-img {
-    grid-area: chip-img;
+    width: var(--chip-img-width-sm);
+    height: var(--chip-img-height-sm);
+    grid-area: slogan;
     justify-self: end;
-    align-self: self-start;
+    align-self: end;
 }
 
 .item-detail .item-info {
@@ -524,6 +529,42 @@ img.responsive-img {
         display: flex;
     }
 
+    .item-detail {
+        grid-template-rows: 1fr 0.5fr 0.5fr 3fr;
+        grid-template-columns: repeat(auto-fit, minmax(0, 1fr));
+        grid-template-areas:
+            'slogan .'
+            '. chip-img'
+            'item-detail-img chip-img'
+            'item-detail-img item-info';
+        gap: 0px 20px;
+    }
+
+    .item-detail .slogan {
+        grid-area: slogan;
+        padding: 0 70px;
+    }
+
+    .item-detail .item-detail-img {
+        grid-area: item-detail-img;
+        justify-self: center;
+        align-self: center;
+    }
+
+    .item-detail .chip-img {
+        width: var(--chip-img-width);
+        height: var(--chip-img-height);
+        grid-area: chip-img;
+        justify-self: end;
+        align-self: start;
+    }
+
+
+    .item-detail .item-info {
+        grid-area: item-info;
+        padding: 0 70px;
+    }
+
     .d-grid-left-right-md {
         display: grid;
         grid-template-rows: 1fr;
@@ -531,9 +572,6 @@ img.responsive-img {
         grid-template-areas:
             'left right';
     }
-
-
-
 }
 
 /* From 992px lg to xl*/
