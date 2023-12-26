@@ -1,0 +1,274 @@
+:root {
+    --nav-bar-height: 112px;
+    --nav-bar-items-height: 52px;
+
+    --lay-logo-width: 40px;
+    --lay-logo-height: 38px;
+
+    --nav-link-font-size: 16px;
+
+    --user-link-width: 52px;
+    --user-link-height: 52px;
+
+    --search-bar-width: 330px;
+
+    --search-icon-width: 19px;
+    --search-icon-height: 19px;
+
+    --search-input-placeholder-font-size: 14px;
+
+    --btn-width: 107px;
+    --btn-height: 52px;
+    --btn-border-radius: 8px;
+    --btn-font-size: 1rem;
+
+    --h1-font-size: 70px;
+
+    --header-container-height: 662px;
+
+    --footer-container: 648px;
+    --footer-background-color: #FFF7E3;
+    --footer-button-width: 36px;
+    --footer-button-height: 36px;
+
+    --black: #000000;
+    --gray: #5D696D;
+    --white: #FFFFFF;
+}
+
+@font-face {
+    font-family: "Manrope";
+    src: url("/fonts/Manrope-VariableFont_wght.ttf")
+}
+
+@font-face {
+    font-family: "Sentient";
+    src: url("/fonts/Sentient-Variable.ttf");
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    max-width: 100%;
+}
+
+.nav-bar {
+    height: var(--nav-bar-height);
+    border-bottom: 1px solid black;
+}
+
+.nav-bar .nav-link-list {
+    margin: 0px 50px;
+}
+
+.nav-bar .nav-link-list>li {
+    height: var(--nav-bar-items-height);
+}
+
+.nav-bar .nav-link {
+    font-size: var(--nav-link-font-size);
+}
+
+.nav-bar .user-link {
+    width: var(--user-link-width);
+    height: var(--user-link-height);
+}
+
+.nav-bar img.search-icon {
+    width: var(--search-icon-width);
+    height: var(--search-icon-height);
+    margin: 0 10px;
+}
+
+.nav-bar .search-bar {
+    width: var(--search-bar-width);
+    border-radius: 8px;
+    border: 1px solid #D8E0E2;
+    font-size: var(--search-input-placeholder-font-size);
+}
+
+footer .link-list>li {
+    margin-right: 14px;
+}
+
+footer .link-list>li>button {
+    width: var(--footer-button-width);
+    height: var(--footer-button-height);
+}
+
+/* Didn't work try again later */
+input.search-input:focus>.search-bar {
+    border: 1px solid var(--black)
+}
+
+/* Atomic css below */
+.container {
+    height: 100%;
+}
+
+.header-container {
+    background: linear-gradient(180deg, #02B5EA 0%, rgba(2, 181, 234, 0.15) 100%);
+    height: var(--header-container-height);
+}
+
+.header-container .description {
+    font-size: 20px;
+}
+
+.footer-container {
+    height: var(--footer-container);
+    background-color: var(--footer-background-color);
+}
+
+.btn {
+    width: var(--btn-width);
+    height: var(--btn-height);
+    border-radius: var(--btn-border-radius);
+    font-size: var(--btn-font-size);
+}
+
+.h1 {
+    font-size: var(--h1-font-size);
+}
+
+
+
+.w-100 {
+    width: 100%;
+}
+
+.w-80 {
+    width: 80%;
+}
+
+.h-100 {
+    height: 100%;
+}
+
+.h-80 {
+    height: 80%;
+}
+
+.outline-none {
+    outline: none;
+}
+
+.font-Manrope {
+    font-family: 'Manrope';
+}
+
+.font-Sentient {
+    font-family: 'Sentient';
+}
+
+.font-style-normal {
+    font-style: normal;
+}
+
+.font-weight-400px {
+    font-weight: 400px;
+}
+
+.clr-black {
+    color: var(--black);
+}
+
+.clr-gray {
+    color: var(--gray);
+}
+
+.clr-white {
+    color: var(--white);
+}
+
+.bg-black {
+    background-color: var(--black);
+}
+
+.text-decoration-none {
+    text-decoration: none;
+}
+
+.list-style-type-none {
+    list-style-type: none;
+}
+
+.lay-logo {
+    width: var(--lay-logo-width);
+    height: var(--lay-logo-height);
+}
+
+.no-margin {
+    margin: 0;
+}
+
+.no-padding {
+    padding: 0;
+}
+
+.no-border {
+    border: none;
+}
+
+.border-radius-50 {
+    border-radius: 50%;
+}
+
+/* Flexbox */
+.center-items-flex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.d-flex {
+    display: flex;
+}
+
+.justify-content-start {
+    justify-content: flex-start;
+}
+
+.justify-content-center {
+    justify-content: center;
+}
+
+.justify-content-end {
+    justify-content: flex-end;
+}
+
+.justify-content-space-betweeen {
+    justify-content: space-between;
+}
+
+.align-items-start {
+    align-items: flex-start;
+}
+
+.align-items-center {
+    align-items: center;
+}
+
+.align-items-end {
+    align-items: flex-end;
+}
+
+.flex-grow-1 {
+    flex-grow: 1;
+}
+
+.flex-shrink-1 {
+    flex-shrink: 1;
+}
+
+.flex-grow-0 {
+    flex-grow: 0;
+}
+
+.flex-shrink-0 {
+    flex-shrink: 0;
+}
+
+.flex-direction-col {
+    flex-direction: column;
+}
