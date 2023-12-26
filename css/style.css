@@ -27,6 +27,7 @@
     --header-container-height-sm: 795px;
     --header-container-height: 662px;
 
+    --footer-container-sm: 865px;
     --footer-container: 648px;
     --footer-background-color: #FFF7E3;
     --footer-button-width: 36px;
@@ -48,6 +49,10 @@
     --chip-img-height-sm: 33px;
     --chip-img-width: clamp(200px, 50%, 333px);
     --chip-img-height: clamp(100px, 80%, 145px);
+
+    --footer-chip-img-width-sm: 339px;
+    --footer-chip-img-height-sm: 287.853px;
+
     /* sizing */
     --sm: 576px;
     --md: 768px;
@@ -115,6 +120,11 @@ footer .link-list>li>button {
     height: var(--footer-button-height);
 }
 
+footer .footer-chip-img {
+    width: var(--footer-chip-img-width-sm);
+    height: var(--footer-chip-img-height-sm);
+}
+
 /* Didn't work try again later */
 input.search-input:focus>.search-bar {
     border: 1px solid var(--black)
@@ -173,7 +183,7 @@ img.crisp-icon {
 
 
 .footer-container {
-    height: var(--footer-container);
+    height: var(--footer-container-sm);
     background-color: var(--footer-background-color);
 }
 
@@ -234,6 +244,10 @@ img.responsive-img {
     width: 100%;
 }
 
+.w-90 {
+    width: 90%;
+}
+
 .w-80 {
     width: 80%;
 }
@@ -280,7 +294,7 @@ img.responsive-img {
 }
 
 .font-size-16px {
-    font-size: clamp(10px, 1.5vw, 16px);
+    font-size: clamp(14px, 1.5vw, 16px);
 }
 
 .font-size-18px {
@@ -456,6 +470,13 @@ img.responsive-img {
     flex-wrap: wrap;
 }
 
+.row-gap-10px {
+    row-gap: 10px;
+}
+
+.col-gap-10px {
+    column-gap: 10px;
+}
 
 /* Display */
 .d-none {
@@ -498,6 +519,15 @@ img.responsive-img {
 
 /* From 768px md to lg*/
 @media screen and (min-width: 768px) {
+    .center-items-flex-md {
+        justify-content: center;
+        align-items: center;
+    }
+
+    .flex-direction-row-md {
+        flex-direction: row;
+    }
+
     .header-container {
         height: var(--header-container-height);
     }
