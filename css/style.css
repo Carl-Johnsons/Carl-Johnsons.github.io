@@ -1,5 +1,4 @@
 :root {
-    --nav-bar-height: 112px;
     --nav-bar-items-height: 52px;
 
     --lay-logo-width: 40px;
@@ -8,7 +7,7 @@
     --user-link-width: 52px;
     --user-link-height: 52px;
 
-    --search-bar-width: 330px;
+    --search-bar-width: clamp(160px, 21vw, 330px);
 
     --search-icon-width: 19px;
     --search-icon-height: 19px;
@@ -20,20 +19,37 @@
     --btn-border-radius: 8px;
     --btn-font-size: 1rem;
 
-    --container-padding-left: 100px;
-    --container-padding-right: 100px;
+    /* Container sizing */
+    --container-padding-left: clamp(10px, 5vw, 100px);
+    --container-padding-right: clamp(10px, 5vw, 100px);
     --container-margin-bottom: 100px;
 
+    --header-container-height-sm: 795px;
     --header-container-height: 662px;
-
-    --lays-snack-chip-img-width: 495.616px;
-    --lays-snack-chip-img-height: 567.639px;
 
     --footer-container: 648px;
     --footer-background-color: #FFF7E3;
     --footer-button-width: 36px;
     --footer-button-height: 36px;
+    /* Image sizing */
+    --crisp-icon-width-sm: 37px;
+    --crisp-icon-height-sm: 28px;
 
+    --lays-snack-chip-img-background-width-sm: clamp(375px, 70vw, 730px);
+    --lays-snack-chip-img-background-height-sm: clamp(375px, 70vw, 730px);
+
+    --lays-snack-chip-img-width-sm: 256.791px;
+    --lays-snack-chip-img-height-sm: 294.108px;
+    --lays-snack-chip-img-width: 495.616px;
+    --lays-snack-chip-img-height: 567.639px;
+
+
+    /* sizing */
+    --sm: 576px;
+    --md: 768px;
+    --lg: 992px;
+    --xl: 1200px;
+    /* color */
     --black: #000000;
     --gray: #5D696D;
     --white: #FFFFFF;
@@ -56,12 +72,12 @@ body {
 }
 
 .nav-bar {
-    height: var(--nav-bar-height);
     border-bottom: 1px solid black;
 }
 
 .nav-bar .nav-link-list {
-    margin: 0px 50px;
+    margin-left: clamp(10px, 2vw, 50px);
+    margin-right: clamp(10px, 2vw, 50px);
 }
 
 .nav-bar .nav-link-list>li {
@@ -98,6 +114,11 @@ footer .link-list>li>button {
 /* Didn't work try again later */
 input.search-input:focus>.search-bar {
     border: 1px solid var(--black)
+}
+
+img.crisp-icon {
+    width: var(--crisp-icon-width-sm);
+    height: var(--crisp-icon-height-sm);
 }
 
 .item-detail {
@@ -142,7 +163,7 @@ input.search-input:focus>.search-bar {
 
 .header-container {
     background: linear-gradient(180deg, #02B5EA 0%, rgba(2, 181, 234, 0.15) 100%);
-    height: var(--header-container-height);
+    height: var(--header-container-height-sm);
 }
 
 
@@ -159,15 +180,16 @@ input.search-input:focus>.search-bar {
 }
 
 img.lays-snack-chip-img {
-    width: var(--lays-snack-chip-img-width);
-    height: var(--lays-snack-chip-img-height);
-
+    max-width: var(--lays-snack-chip-img-width-sm);
+    max-height: var(--lays-snack-chip-img-height-sm);
 }
 
 .lays-snack-chip-img-background {
-    background-image: url(/images/laysSnackChipBG.png);
-    width: 100%;
-    height: 100%;
+    background-image: url(/images/laysSnackChipBGSm.png);
+    width: var(--lays-snack-chip-img-background-width-sm);
+    height: var(--lays-snack-chip-img-background-height-sm);
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 /* Img */
@@ -235,14 +257,6 @@ img.responsive-img {
     height: 30%;
 }
 
-.left {
-    width: 50%;
-}
-
-.right {
-    width: 50%;
-}
-
 .outline-none {
     outline: none;
 }
@@ -261,7 +275,7 @@ img.responsive-img {
 }
 
 .font-size-16px {
-    font-size: 16px;
+    font-size: clamp(10px, 1.5vw, 16px);
 }
 
 .font-size-18px {
@@ -269,7 +283,7 @@ img.responsive-img {
 }
 
 .font-size-20px {
-    font-size: 20px;
+    font-size: clamp(14px, 2vw, 20px);
 }
 
 .font-size-22px {
@@ -277,11 +291,11 @@ img.responsive-img {
 }
 
 .font-size-42px {
-    font-size: 42px;
+    font-size: clamp(26px, 3vw, 42px);
 }
 
 .font-size-70px {
-    font-size: 70px;
+    font-size: clamp(40px, 5vw, 70px);
 }
 
 .font-weight-400 {
@@ -336,10 +350,6 @@ img.responsive-img {
     padding: 0;
 }
 
-.no-padding-right {
-    padding-right: 0;
-}
-
 .margin-right-10px {
     margin-right: 10px;
 }
@@ -360,16 +370,18 @@ img.responsive-img {
     border-radius: 50%;
 }
 
+/* Overflow */
+.overflow-hidden {
+    overflow: hidden;
+}
+
+
 /* Flexbox */
 .center-items-flex {
-    display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.d-flex {
-    display: flex;
-}
 
 .justify-content-start {
     justify-content: flex-start;
@@ -395,6 +407,10 @@ img.responsive-img {
     justify-content: space-evenly;
 }
 
+.justify-self-center {
+    justify-self: center;
+}
+
 .align-items-start {
     align-items: flex-start;
 }
@@ -405,6 +421,10 @@ img.responsive-img {
 
 .align-items-end {
     align-items: flex-end;
+}
+
+.align-self-center {
+    align-self: center;
 }
 
 .flex-grow-1 {
@@ -431,7 +451,90 @@ img.responsive-img {
     flex-wrap: wrap;
 }
 
-/* Grid */
+
+/* Display */
+.d-none {
+    display: none;
+}
+
+.d-block {
+    display: block;
+}
+
+.d-flex {
+    display: flex;
+}
+
 .d-grid {
     display: grid;
 }
+
+.d-grid-left-right-md {
+    display: grid;
+    grid-template-rows: 1.5fr 1fr;
+    grid-template-columns: 1fr;
+    grid-template-areas:
+        'right'
+        'left';
+}
+
+.d-grid-left-right-md .left {
+    grid-area: left;
+}
+
+.d-grid-left-right-md .right {
+    grid-area: right;
+}
+
+@media screen and (min-width: 0px) {}
+
+/* From 576px to md*/
+@media screen and (min-width: 576px) {}
+
+/* From 768px md to lg*/
+@media screen and (min-width: 768px) {
+    .header-container {
+        height: var(--header-container-height);
+    }
+
+    img.lays-snack-chip-img {
+        max-width: var(--lays-snack-chip-img-width);
+        max-height: var(--lays-snack-chip-img-height);
+    }
+
+    .lays-snack-chip-img-background {
+        background-image: url(/images/laysSnackChipBG.png);
+        width: 100%;
+        height: 100%;
+    }
+
+    .no-padding-right-md {
+        padding-right: 0;
+    }
+
+    .d-none-md {
+        display: none;
+    }
+
+    .d-block-md {
+        display: block;
+    }
+
+    .d-flex-md {
+        display: flex;
+    }
+
+    .d-grid-left-right-md {
+        display: grid;
+        grid-template-rows: 1fr;
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas:
+            'left right';
+    }
+
+
+
+}
+
+/* From 992px lg to xl*/
+@media screen and (min-width: 992px) {}
