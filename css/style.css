@@ -5,8 +5,6 @@
     --lay-logo-width: 40px;
     --lay-logo-height: 38px;
 
-    --nav-link-font-size: 16px;
-
     --user-link-width: 52px;
     --user-link-height: 52px;
 
@@ -24,6 +22,8 @@
 
     --h1-font-size: 70px;
 
+    --container-padding-left: 100px;
+    --container-padding-right: 100px;
     --header-container-height: 662px;
 
     --footer-container: 648px;
@@ -65,9 +65,7 @@ body {
     height: var(--nav-bar-items-height);
 }
 
-.nav-bar .nav-link {
-    font-size: var(--nav-link-font-size);
-}
+
 
 .nav-bar .user-link {
     width: var(--user-link-width);
@@ -102,8 +100,11 @@ input.search-input:focus>.search-bar {
 }
 
 /* Atomic css below */
+/* Container */
 .container {
     height: 100%;
+    padding-left: var(--container-padding-left);
+    padding-right: var(--container-padding-right);
 }
 
 .header-container {
@@ -111,9 +112,6 @@ input.search-input:focus>.search-bar {
     height: var(--header-container-height);
 }
 
-.header-container .description {
-    font-size: 20px;
-}
 
 .footer-container {
     height: var(--footer-container);
@@ -131,14 +129,21 @@ input.search-input:focus>.search-bar {
     font-size: var(--h1-font-size);
 }
 
-
-
+/* sizing */
 .w-100 {
     width: 100%;
 }
 
 .w-80 {
     width: 80%;
+}
+
+.w-50 {
+    width: 50%;
+}
+
+.w-30 {
+    width: 30%;
 }
 
 .h-100 {
@@ -149,10 +154,27 @@ input.search-input:focus>.search-bar {
     height: 80%;
 }
 
+.h-50 {
+    height: 50%;
+}
+
+.h-30 {
+    height: 30%;
+}
+
+.left {
+    width: 50%;
+}
+
+.right {
+    width: 50%;
+}
+
 .outline-none {
     outline: none;
 }
 
+/* Font */
 .font-Manrope {
     font-family: 'Manrope';
 }
@@ -165,10 +187,23 @@ input.search-input:focus>.search-bar {
     font-style: normal;
 }
 
+.font-size-16px {
+    font-size: 16px;
+}
+
+.font-size-20px {
+    font-size: 20px;
+}
+
 .font-weight-400px {
     font-weight: 400px;
 }
 
+.font-weigh-700px {
+    font-weight: 700;
+}
+
+/* color */
 .clr-black {
     color: var(--black);
 }
@@ -185,6 +220,7 @@ input.search-input:focus>.search-bar {
     background-color: var(--black);
 }
 
+/* anchor */
 .text-decoration-none {
     text-decoration: none;
 }
@@ -198,6 +234,7 @@ input.search-input:focus>.search-bar {
     height: var(--lay-logo-height);
 }
 
+/* margin, padding, border */
 .no-margin {
     margin: 0;
 }
@@ -271,4 +308,8 @@ input.search-input:focus>.search-bar {
 
 .flex-direction-col {
     flex-direction: column;
+}
+
+.flex-wrap-wrap {
+    flex-wrap: wrap;
 }
