@@ -64,6 +64,12 @@
     --customer-img-width: 426px;
     --customer-img-height: 550px;
 
+    --crisps-store-locator-container-height-sm: 342px;
+    --crisps-store-locator-container-height: 468px;
+    --crisps-store-locator-child-element-width: 470px;
+    --find-store-btn-width-sm: 159px;
+    --find-store-btn-height-sm: 60px;
+
     --footer-chip-img-width-sm: 339px;
     --footer-chip-img-height-sm: 287.853px;
 
@@ -77,6 +83,7 @@
     /* color */
     --footer-background-color: #FFF7E3;
     --hr-background-color: #33D1FF;
+    --crisps-store-locator-container-background-color: #FFD36A;
 
     --black: #000000;
     --gray: #5D696D;
@@ -258,11 +265,23 @@ img.lays-snack-chip-img {
     min-height: var(--customer-background-height-sm);
 }
 
+.crisps-store-locator-container {
+    height: var(--crisps-store-locator-container-height-sm);
+    background-image: url(/images/crispsStoreLocatorBg.png);
+    background-size: contain;
+    background-color: var(--crisps-store-locator-container-background-color);
+}
+
 .btn {
     width: var(--btn-width);
     height: var(--btn-height);
     border-radius: var(--btn-border-radius);
     font-size: var(--btn-font-size);
+}
+
+.crisps-store-locator-container .find-store-btn {
+    width: var(--find-store-btn-width-sm);
+    height: var(--find-store-btn-height-sm);
 }
 
 div.divider-light-blue {
@@ -348,6 +367,14 @@ img.responsive-img {
 /* Line height */
 .line-height-24px {
     line-height: 24px;
+}
+
+.line-height-30px {
+    line-height: 30px;
+}
+
+.line-height-46px {
+    line-height: 46px;
 }
 
 /* Font */
@@ -502,6 +529,11 @@ img.responsive-img {
     margin: 0;
 }
 
+.no-margin-top-bottom {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
 .margin-top-10px {
     margin-top: 10px;
 }
@@ -546,8 +578,17 @@ img.responsive-img {
     margin-bottom: 6px;
 }
 
+
 .margin-bottom-10px {
     margin-bottom: 10px;
+}
+
+.margin-bottom-12px {
+    margin-bottom: 12px;
+}
+
+.margin-bottom-18px {
+    margin-bottom: 18px;
 }
 
 .margin-bottom-20px {
@@ -839,7 +880,20 @@ img.responsive-img {
         font-weight: 700;
     }
 
+    /* Line height */
+    .line-height-24px-md {
+        line-height: 24px;
+    }
 
+    .line-height-30px-md {
+        line-height: 30px;
+    }
+
+    .line-height-46px-md {
+        line-height: 46px;
+    }
+
+    /* Flex-box */
     .center-items-flex-md {
         justify-content: center;
         align-items: center;
@@ -856,11 +910,6 @@ img.responsive-img {
 
     .header-container {
         height: var(--header-container-height);
-    }
-
-
-    .no-padding-right-md {
-        padding-right: 0;
     }
 
     img.responsive-img-md {
@@ -950,6 +999,10 @@ img.responsive-img {
     }
 
     /* border, padding, margin */
+    .no-padding-right-md {
+        padding-right: 0;
+    }
+
     .box-sizing-border-box-md {
         box-sizing: border-box;
     }
@@ -970,6 +1023,11 @@ img.responsive-img {
 
     .no-margin-md {
         margin: 0;
+    }
+
+    .no-margin-top-bottom-md {
+        margin-top: 0;
+        margin-bottom: 0;
     }
 
     .margin-top-10px-md {
@@ -1018,6 +1076,14 @@ img.responsive-img {
 
     .margin-bottom-10px-md {
         margin-bottom: 10px;
+    }
+
+    .margin-bottom-12px-md {
+        margin-bottom: 12px;
+    }
+
+    .margin-bottom-18px-md {
+        margin-bottom: 18px;
     }
 
     .margin-bottom-20px-md {
@@ -1153,6 +1219,14 @@ img.responsive-img {
     .customer-feedback-container .left,
     .customer-feedback-container .right {
         aspect-ratio: 1;
+    }
+
+    .crisps-store-locator-container {
+        height: var(--crisps-store-locator-container-height);
+    }
+
+    .crisps-store-locator-container>* {
+        width: var(--crisps-store-locator-child-element-width);
     }
 }
 
