@@ -14,38 +14,29 @@
 
     --search-input-placeholder-font-size: 14px;
 
-    --btn-width: 107px;
-    --btn-height: 52px;
     --btn-border-radius: 8px;
-    --btn-font-size: 1rem;
+    --btn-font-size: 18px;
 
     /* Container sizing */
     --container-padding-left: clamp(10px, 9.5vw, 135px);
     --container-padding-right: clamp(10px, 9.5vw, 135px);
     --container-margin-bottom: 100px;
 
-    --header-container-height-sm: 795px;
     --header-container-height: 662px;
 
     --customer-feedback-container-height-sm: 932px;
     --customer-feedback-container-height: 752px;
 
-    --footer-container-sm: 865px;
-    --footer-container: 648px;
+    --footer-container-height-sm: 100%;
+    --footer-container-height: 648px;
     --footer-button-width: 36px;
     --footer-button-height: 36px;
     /* Image sizing */
     --crisp-icon-width-sm: 37px;
     --crisp-icon-height-sm: 28px;
 
-
     --lays-snack-chip-img-background-width-sm: clamp(375px, 70vw, 730px);
     --lays-snack-chip-img-background-height-sm: clamp(375px, 70vw, 730px);
-
-    --lays-snack-chip-img-width-sm: 256.791px;
-    --lays-snack-chip-img-height-sm: 294.108px;
-    --lays-snack-chip-img-width: 495.616px;
-    --lays-snack-chip-img-height: 567.639px;
 
     --chip-img-width-sm: 75px;
     --chip-img-height-sm: 33px;
@@ -67,13 +58,27 @@
     --crisps-store-locator-container-height-sm: 342px;
     --crisps-store-locator-container-height: 468px;
     --crisps-store-locator-child-element-width: 470px;
-    --find-store-btn-width-sm: 159px;
-    --find-store-btn-height-sm: 60px;
 
     --footer-chip-img-width-sm: 339px;
     --footer-chip-img-height-sm: 287.853px;
+    --footer-chip-img-width: 570px;
+    --footer-chip-img-height: 484px;
 
+    --footer-left-section-width: clamp(200px, 35vw, 513px);
     /* Other */
+    /* Font size */
+    --h1-font-size: clamp(40px, calc(35px + 3vw), 70px);
+    --h2-font-size-sm: 26px;
+    --h2-font-size: clamp(26px, calc(20px + 2vw), 42px);
+    --h3-font-size: 22px;
+    --h4-font-size: 20px;
+
+    --p1-font-size: clamp(14px, calc(10px + 1vw), 20px);
+    --p2-font-size: clamp(14px, calc(10px + 1vw), 18px);
+    --p3-font-size: clamp(14px, calc(10px + 1vw), 16px);
+    --p4-font-size: 14px;
+
+    --testimonial-font-size: clamp(14px, calc(10px+1vw), 22px);
     --hr-height: 2px;
     /* sizing */
     --sm: 576px;
@@ -82,19 +87,22 @@
     --xl: 1200px;
     /* color */
     --footer-background-color: #FFF7E3;
-    --hr-background-color: #33D1FF;
     --crisps-store-locator-container-background-color: #FFD36A;
 
-    --black: #000000;
+    --black: #182327;
+    --light-gray: rgb(177, 177, 177);
     --gray: #5D696D;
     --light-blue: #80E2FF;
+    --blue: #33D1FF;
     --yellow: #FFD36A;
     --white: #FFFFFF;
 }
 
+
+
 @font-face {
     font-family: "Manrope";
-    src: url("/fonts/Manrope-VariableFont_wght.ttf")
+    src: url("/fonts/Manrope-VariableFont_wght.ttf");
 }
 
 @font-face {
@@ -107,14 +115,56 @@
     src: url("/fonts/Inter-VariableFont_slnt\,wght.ttf");
 }
 
+/* Default setting */
+* {
+    color: var(--black);
+}
+
+h1,
+.h1 {
+    font-size: var(--h1-font-size);
+}
+
+h2,
+.h2 {
+    font-size: var(--h2-font-size);
+}
+
+h3,
+.h3 {
+    font-size: var(--h3-font-size);
+}
+
+h4,
+.h4 {
+    font-size: var(--h4-font-size);
+}
+
+.p1 {
+    font-size: var(--p1-font-size);
+}
+
+.p2 {
+    font-size: var(--p2-font-size);
+}
+
+.p3 {
+    font-size: var(--p3-font-size);
+}
+
+.p4 {
+    font-size: var(--p4-font-size);
+}
+
+.testimonial {
+    font-size: var(--testimonial-font-size);
+}
+
+/* Specific rules */
 body {
     width: 100vw;
     height: 100vh;
     max-width: 100%;
-}
-
-.nav-bar {
-    border-bottom: 1px solid black;
 }
 
 .nav-bar .nav-link-list {
@@ -154,8 +204,8 @@ footer .link-list>li>button {
 }
 
 footer .footer-chip-img {
-    width: var(--footer-chip-img-width-sm);
-    height: var(--footer-chip-img-height-sm);
+    max-width: var(--footer-chip-img-width-sm);
+    max-height: var(--footer-chip-img-height-sm);
 }
 
 /* Didn't work try again later */
@@ -222,10 +272,6 @@ img.crisp-icon {
     margin-bottom: 70px;
 }
 
-img.lays-snack-chip-img {
-    max-width: var(--lays-snack-chip-img-width-sm);
-    max-height: var(--lays-snack-chip-img-height-sm);
-}
 
 .lays-snack-chip-img-background {
     background-image: url(/images/laysSnackChipBGSm.png);
@@ -246,11 +292,11 @@ img.lays-snack-chip-img {
 
 .header-container {
     background: linear-gradient(180deg, #02B5EA 0%, rgba(2, 181, 234, 0.15) 100%);
-    height: var(--header-container-height-sm);
+    min-height: var(--header-container-height);
 }
 
 .footer-container {
-    height: var(--footer-container-sm);
+    height: var(--footer-container-height-sm);
     background-color: var(--footer-background-color);
 }
 
@@ -273,21 +319,26 @@ img.lays-snack-chip-img {
 }
 
 .btn {
-    width: var(--btn-width);
-    height: var(--btn-height);
+    padding: 15px 36px;
     border-radius: var(--btn-border-radius);
+
     font-size: var(--btn-font-size);
+    font-family: 'Manrope';
+    font-weight: 600;
+
+    background-color: var(--black);
+    color: var(--white);
 }
 
-.crisps-store-locator-container .find-store-btn {
-    width: var(--find-store-btn-width-sm);
-    height: var(--find-store-btn-height-sm);
+.menu-btn {
+    padding: 10px 10px;
+    border-radius: 8px;
 }
 
-div.divider-light-blue {
+
+div.divider {
     width: 100%;
     height: var(--hr-height);
-    background: var(--hr-background-color);
 }
 
 /* Img */
@@ -337,6 +388,10 @@ img.responsive-img {
 
 .w-50 {
     width: 50%;
+}
+
+.w-fit-content {
+    width: fit-content;
 }
 
 .w-30 {
@@ -403,7 +458,7 @@ img.responsive-img {
 }
 
 .font-size-16px {
-    font-size: clamp(14px, 1.5vw, 16px);
+    font-size: 16px;
 }
 
 .font-size-18px {
@@ -411,7 +466,7 @@ img.responsive-img {
 }
 
 .font-size-20px {
-    font-size: clamp(14px, 2vw, 20px);
+    font-size: 20px;
 }
 
 .font-size-22px {
@@ -476,12 +531,20 @@ img.responsive-img {
     background-color: var(--black);
 }
 
+.bg-light-gray {
+    background-color: var(--light-gray);
+}
+
 .bg-gray {
     background-color: var(--gray);
 }
 
 .bg-light-blue {
     background-color: var(--light-blue);
+}
+
+.bg-blue {
+    background-color: var(--blue);
 }
 
 .bg-yellow {
@@ -546,8 +609,20 @@ img.responsive-img {
     margin-top: 30px;
 }
 
+.margin-right-6px {
+    margin-right: 6px;
+}
+
 .margin-right-10px {
     margin-right: 10px;
+}
+
+.margin-right-12px {
+    margin-right: 12px;
+}
+
+.margin-right-18px {
+    margin-right: 18px;
 }
 
 .margin-right-20px {
@@ -562,22 +637,61 @@ img.responsive-img {
     margin-right: 30px;
 }
 
+.margin-right-38px {
+    margin-right: 38px;
+}
+
+.margin-right-48px {
+    margin-right: 48px;
+}
+
+.margin-right-70px {
+    margin-right: 70px;
+}
+
+.margin-left-6px {
+    margin-left: 6px;
+}
+
 .margin-left-10px {
     margin-left: 10px;
+}
+
+.margin-left-12px {
+    margin-left: 12px;
+}
+
+.margin-left-18px {
+    margin-left: 18px;
 }
 
 .margin-left-20px {
     margin-left: 20px;
 }
 
+.margin-left-28px {
+    margin-left: 28px;
+}
+
 .margin-left-30px {
     margin-left: 30px;
+}
+
+.margin-left-38px {
+    margin-left: 38px;
+}
+
+.margin-left-48px {
+    margin-left: 48px;
+}
+
+.margin-left-70px {
+    margin-left: 70px;
 }
 
 .margin-bottom-6px {
     margin-bottom: 6px;
 }
-
 
 .margin-bottom-10px {
     margin-bottom: 10px;
@@ -607,14 +721,23 @@ img.responsive-img {
     margin-bottom: 38px;
 }
 
+.margin-bottom-40px {
+    margin-bottom: 40px;
+}
+
 .margin-bottom-48px {
     margin-bottom: 48px;
+}
+
+.margin-bottom-55px {
+    margin-bottom: 55px;
 }
 
 .margin-bottom-70px {
     margin-bottom: 70px;
 }
 
+/*  */
 .margin-top-bottom-55px {
     margin-top: 55px;
     margin-bottom: 55px;
@@ -721,13 +844,41 @@ img.responsive-img {
     row-gap: 10px;
 }
 
+.row-gap-12px {
+    row-gap: 12px;
+}
+
 .col-gap-10px {
     column-gap: 10px;
+}
+
+.col-gap-12px {
+    column-gap: 12px;
+}
+
+.flex-direction-row {
+    flex-direction: row;
+}
+
+.flex-direction-row-reverse {
+    flex-direction: row-reverse;
+}
+
+.flex-direction-col {
+    flex-direction: column;
+}
+
+.flex-direction-col-reverse {
+    flex-direction: column-reverse;
 }
 
 /* Aligning element */
 .text-align-center {
     text-align: center;
+}
+
+.text-align-end {
+    text-align: end;
 }
 
 .justify-content-start {
@@ -762,11 +913,7 @@ img.responsive-img {
     justify-self: center;
 }
 
-.d-grid>.justify-self-end {
-    justify-self: end;
-}
-
-.d-flex>.justify-self-end {
+.justify-self-end {
     justify-self: end;
 }
 
@@ -899,17 +1046,20 @@ img.responsive-img {
         align-items: center;
     }
 
-
     .flex-direction-row-md {
         flex-direction: row;
+    }
+
+    .flex-direction-row-reverse-md {
+        flex-direction: row-reverse;
     }
 
     .flex-direction-col-md {
         flex-direction: column;
     }
 
-    .header-container {
-        height: var(--header-container-height);
+    .flex-direction-col-reverse-md {
+        flex-direction: column-reverse;
     }
 
     img.responsive-img-md {
@@ -996,6 +1146,22 @@ img.responsive-img {
 
     .align-self-end-md {
         align-self: end;
+    }
+
+    .row-gap-10px-md {
+        row-gap: 10px;
+    }
+
+    .row-gap-12px-md {
+        row-gap: 12px;
+    }
+
+    .col-gap-10px-md {
+        column-gap: 10px;
+    }
+
+    .col-gap-12px-md {
+        column-gap: 12px;
     }
 
     /* border, padding, margin */
@@ -1102,8 +1268,16 @@ img.responsive-img {
         margin-bottom: 38px;
     }
 
+    .margin-bottom-40px-md {
+        margin-bottom: 40px;
+    }
+
     .margin-bottom-48px-md {
         margin-bottom: 48px;
+    }
+
+    .margin-bottom-55px-md {
+        margin-bottom: 55px;
     }
 
     .margin-bottom-70px-md {
@@ -1112,10 +1286,6 @@ img.responsive-img {
 
     /* Other */
     /* Img */
-    img.lays-snack-chip-img {
-        max-width: var(--lays-snack-chip-img-width);
-        max-height: var(--lays-snack-chip-img-height);
-    }
 
     .lays-snack-chip-img-background {
         background-image: url(/images/laysSnackChipBG.png);
@@ -1123,11 +1293,24 @@ img.responsive-img {
         height: 100%;
     }
 
+    footer .footer-chip-img {
+        max-width: var(--footer-chip-img-width);
+        max-height: var(--footer-chip-img-height);
+    }
+
     .customer-background {
         max-width: var(--customer-background-width);
         max-height: var(--customer-background-height);
         width: 29vw;
         height: 29vw;
+    }
+
+    .footer-container {
+        height: var(--footer-container-height);
+    }
+
+    .footer-container .left {
+        width: var(--footer-left-section-width);
     }
 
     img.customer-img {
