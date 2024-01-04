@@ -7,7 +7,7 @@
     --user-link-width: 52px;
     --user-link-height: 52px;
 
-    --search-bar-width: clamp(160px, 21vw, 330px);
+    --search-bar-width: clamp(140px, 17vw, 330px);
 
     --search-icon-width: 19px;
     --search-icon-height: 19px;
@@ -89,6 +89,7 @@
     --footer-background-color: #FFF7E3;
     --crisps-store-locator-container-background-color: #FFD36A;
 
+    --black-hover: #3a3a3a;
     --black: #182327;
     --light-gray: rgb(177, 177, 177);
     --gray: #5D696D;
@@ -159,12 +160,20 @@ h4,
 .testimonial {
     font-size: var(--testimonial-font-size);
 }
+a:hover{
+    text-decoration: underline;
+}
 
 /* Specific rules */
 body {
     width: 100vw;
     height: 100vh;
     max-width: 100%;
+}
+
+.menu-dropdown>ul>li {
+    padding: 2px 0px;
+    height: 52px;
 }
 
 .nav-bar .nav-link-list {
@@ -325,9 +334,14 @@ img.crisp-icon {
     font-size: var(--btn-font-size);
     font-family: 'Manrope';
     font-weight: 600;
+    cursor: pointer;
 
     background-color: var(--black);
     color: var(--white);
+}
+
+.btn:hover {
+    background-color: var(--black-hover);
 }
 
 .menu-btn {
@@ -649,6 +663,10 @@ img.responsive-img {
     margin-right: 70px;
 }
 
+.margin-right-auto {
+    margin-right: auto;
+}
+
 .margin-left-6px {
     margin-left: 6px;
 }
@@ -687,6 +705,10 @@ img.responsive-img {
 
 .margin-left-70px {
     margin-left: 70px;
+}
+
+.margin-left-auto {
+    margin-left: auto;
 }
 
 .margin-bottom-6px {
@@ -848,12 +870,24 @@ img.responsive-img {
     row-gap: 12px;
 }
 
+.no-row-gap {
+    row-gap: 0;
+}
+
 .col-gap-10px {
     column-gap: 10px;
 }
 
 .col-gap-12px {
     column-gap: 12px;
+}
+
+.no-col-gap {
+    column-gap: 0;
+}
+
+.no-gap {
+    gap: 0;
 }
 
 .flex-direction-row {
@@ -1156,12 +1190,24 @@ img.responsive-img {
         row-gap: 12px;
     }
 
+    .no-row-gap-md {
+        row-gap: 0;
+    }
+
     .col-gap-10px-md {
         column-gap: 10px;
     }
 
     .col-gap-12px-md {
         column-gap: 12px;
+    }
+
+    .no-col-gap-md {
+        column-gap: 0;
+    }
+
+    .no-gap-md {
+        gap: 0;
     }
 
     /* border, padding, margin */
@@ -1220,6 +1266,10 @@ img.responsive-img {
         margin-right: 28px;
     }
 
+    .margin-right-auto-md {
+        margin-right: auto;
+    }
+
     .margin-right-30px-md {
         margin-right: 30px;
     }
@@ -1234,6 +1284,10 @@ img.responsive-img {
 
     .margin-left-30px-md {
         margin-left: 30px;
+    }
+
+    .margin-left-auto-md {
+        margin-left: auto;
     }
 
     .margin-bottom-6px-md {
