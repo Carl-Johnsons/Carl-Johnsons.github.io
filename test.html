@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="/css/owl.theme.default.css">
+    <style>
+        .item {
+            background-color: aquamarine;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Set up your HTML -->
+    <div class="owl-carousel owl-theme">
+        <div> Your Content </div>
+        <div> Your Content </div>
+        <div> Your Content </div>
+        <div> Your Content </div>
+        <div> Your Content </div>
+        <div> Your Content </div>
+        <div> Your Content </div>
+    </div>
+
+    <!-- Dependency for owl carousel -->
+    <script src="js/jquery-3.7.1.min.js"></script>
+    <!-- Owl carousel script -->
+    <script src="js/owl.carousel.min.js"></script>
+
+    <script>
+        $('.owl-carousel').owlCarousel({
+            loop: true,
+            margin: 10,
+            nav: true,
+            items: 1,
+        })
+    </script>
+</body>
+
+</html>

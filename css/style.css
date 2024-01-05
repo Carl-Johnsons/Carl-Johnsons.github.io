@@ -52,8 +52,8 @@
     --customer-background-height-sm: 337px;
     --customer-background-width: 470px;
     --customer-background-height: 470px;
-    --customer-img-width: 426px;
-    --customer-img-height: 550px;
+    --customer-img-width: clamp(307px, calc(307px + 8vw), 426px);
+    --customer-img-height: clamp(396px, calc(396px + 11vw), 550px);
 
     --crisps-store-locator-container-height-sm: 342px;
     --crisps-store-locator-container-height: 468px;
@@ -160,9 +160,33 @@ h4,
 .testimonial {
     font-size: var(--testimonial-font-size);
 }
-a:hover{
+
+a:hover {
     text-decoration: underline;
 }
+
+/* 
+Make the element and the child of it square 
+Reference: https://stackoverflow.com/questions/19068070/how-to-style-a-div-to-be-a-responsive-square
+*/
+.square {
+    position: relative;
+}
+
+.square::after {
+    content: "";
+    display: block;
+    padding-bottom: 100%;
+}
+
+.square img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: 50% 50%;
+}
+
+
 
 /* Specific rules */
 body {
@@ -293,7 +317,7 @@ img.crisp-icon {
 /* Atomic css below */
 /* Container */
 .container {
-    height: 100%;
+    height: auto;
     padding-left: var(--container-padding-left);
     padding-right: var(--container-padding-right);
     margin-bottom: var(--container-margin-bottom);
@@ -309,15 +333,9 @@ img.crisp-icon {
     background-color: var(--footer-background-color);
 }
 
-.customer-feedback-container {
-    height: var(--customer-feedback-container-height-sm);
-}
-
 .customer-feedback-container .customer-background {
-    background-image: url(/images/customerBg.png);
-    background-size: contain;
     min-width: var(--customer-background-width-sm);
-    min-height: var(--customer-background-height-sm);
+    height: auto;
 }
 
 .crisps-store-locator-container {
@@ -342,6 +360,10 @@ img.crisp-icon {
 
 .btn:hover {
     background-color: var(--black-hover);
+}
+
+.cursor-pointer {
+    cursor: pointer;
 }
 
 .menu-btn {
@@ -404,12 +426,12 @@ img.responsive-img {
     width: 50%;
 }
 
-.w-fit-content {
-    width: fit-content;
-}
-
 .w-30 {
     width: 30%;
+}
+
+.w-fit-content {
+    width: fit-content;
 }
 
 .h-100 {
@@ -1017,6 +1039,31 @@ img.responsive-img {
 /* From 768px md to lg*/
 @media screen and (min-width: 768px) {
 
+    /* Sizing */
+    .w-100-md {
+        width: 100%;
+    }
+
+    .w-90-md {
+        width: 90%;
+    }
+
+    .w-80-md {
+        width: 80%;
+    }
+
+    .w-50-md {
+        width: 50%;
+    }
+
+    .w-30-md {
+        width: 30%;
+    }
+
+    .w-fit-content-md {
+        width: fit-content;
+    }
+
     .font-size-14px-md {
         font-size: 14px;
     }
@@ -1354,9 +1401,7 @@ img.responsive-img {
 
     .customer-background {
         max-width: var(--customer-background-width);
-        max-height: var(--customer-background-height);
-        width: 29vw;
-        height: 29vw;
+        height: auto;
     }
 
     .footer-container {
@@ -1444,19 +1489,6 @@ img.responsive-img {
         grid-area: popular-item-2;
     }
 
-    .customer-feedback-container {
-        height: var(--customer-feedback-container-height);
-    }
-
-    .customer-feedback-container.d-grid-left-right-md {
-        justify-content: center;
-        align-items: center;
-    }
-
-    .customer-feedback-container .left,
-    .customer-feedback-container .right {
-        aspect-ratio: 1;
-    }
 
     .crisps-store-locator-container {
         height: var(--crisps-store-locator-container-height);

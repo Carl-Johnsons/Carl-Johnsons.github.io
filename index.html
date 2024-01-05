@@ -4,8 +4,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Dependency for owl carousel -->
+    <link rel="stylesheet" href="/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="/css/owl.theme.default.css">
+    <!-- Custom style -->
     <link rel="stylesheet" href="/css/style.css">
     <title>Ăn Lays hông</title>
+
 </head>
 
 <body class="no-margin no-padding">
@@ -135,7 +140,6 @@
                 </div>
             </div>
         </div>
-
         <div class="item-list-container container">
             <div class="item-list-slogan">
                 <h2 class="slogan text-align-center font-weight-700 font-Sentient ">
@@ -278,7 +282,6 @@
                 <button class="btn">All Crisps</button>
             </div>
         </div>
-
         <div class="popular-item-container container ">
             <div class="popular-item-list d-grid">
                 <h2 class="title margin-bottom-30px
@@ -316,55 +319,101 @@
                 <img src="/images/navigateItemBtn.svg" alt="Navgiate item button">
             </div>
         </div>
-
-        <div class="customer-feedback-container container 
-                    d-grid-left-right-md bg-light-blue
+        <div class="customer-feedback-container container d-flex align-items-center overflow-hidden
+                    bg-light-blue
                     padding-top-bottom-55px padding-top-bottom-100px-md no-margin-top-bottom">
-            <div class="left d-flex-md flex-direction-col-md justify-content-center-md">
-                <h2 class="title
-                    margin-bottom-28px margin-bottom-70px-md
-                    font-Sentient font-weight-700">
-                    What's Our Customer Say
-                </h2>
-                <div class="customer-comment 
-                margin-bottom-38px margin-bottom-48px-md
-                testimonial font-Inter font-style-italic font-weight-500
-                line-height-24px">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
-                    et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-                    aliquip ex ea commodo consequat.
-                </div>
-                <div class="divider bg-blue border-radius-1px margin-bottom-28px-md"></div>
-                <div class="d-flex-md justify-content-space-between-md">
-                    <div class="customer-info">
-                        <h3 class="customer-name
-                        margin-bottom-6px
-                        font-Manrope font-weight-600">
-                            Annara Veirmont
-                        </h3>
-                        <div class="customer-age
-                                    margin-bottom-28px
-                                    font-Manrope p3">
-                            23 years of Age
+            <div class="owl-carousel ">
+                <div class="item d-flex flex-direction-col-reverse
+                            flex-direction-row-md col-gap-12px-md justify-content-space-between">
+                    <div class="w-100 w-50-md d-flex-md flex-direction-col-md justify-content-center-md">
+                        <h2 class="title
+                                    margin-bottom-28px margin-bottom-70px-md
+                                    font-Sentient font-weight-700">
+                            What's Our Customer Say
+                        </h2>
+                        <div class="customer-comment 
+                                    margin-bottom-38px margin-bottom-48px-md
+                                    testimonial font-Inter font-style-italic font-weight-500
+                                    line-height-24px">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                            labore
+                            et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
+                            nisi
+                            ut
+                            aliquip ex ea commodo consequat.
+                        </div>
+                        <div class="divider bg-blue border-radius-1px margin-bottom-28px-md"></div>
+                        <div class="d-flex-md justify-content-space-between-md">
+                            <div class="customer-info">
+                                <h3 class="customer-name
+                                            margin-bottom-6px
+                                            font-Manrope font-weight-600">
+                                    Annara Veirmont
+                                </h3>
+                                <div class="customer-age
+                                            margin-bottom-28px
+                                            font-Manrope p3">
+                                    23 years of Age
+                                </div>
+                            </div>
+                            <!-- Position for owl navigation btn -->
+                            <div class="arrow-navigation d-flex">
+
+                            </div>
                         </div>
                     </div>
-
-                    <div class="arrow-navigation d-flex">
-                        <div class="left-arrow margin-right-28px">
-                            <img src="/images/leftArrow.png" alt="left arrow">
-                        </div>
-                        <div class="right-arrow">
-                            <img src="/images/rightArrow.png" alt="right arrow">
-                        </div>
+                    <div class="w-100 w-50-md d-flex center-items-flex pos-relative">
+                        <img class="pos-absolute pos-bottom-0 customer-background bg-yellow border-radius-12px"
+                            src="/images/customerBg.png" alt="">
+                        <img class="responsive-img-md customer-img z-index-0" src="/images/customerImg1.png"
+                            alt="customer image">
                     </div>
                 </div>
+                <div class="item d-flex flex-direction-col-reverse
+                            flex-direction-row-md col-gap-12px-md justify-content-space-between">
+                    <div class="w-100 w-50-md d-flex-md flex-direction-col-md justify-content-center-md">
+                        <h2 class="title
+                                    margin-bottom-28px margin-bottom-70px-md
+                                    font-Sentient font-weight-700">
+                            What's Our Customer Say
+                        </h2>
+                        <div class="customer-comment 
+                                    margin-bottom-38px margin-bottom-48px-md
+                                    testimonial font-Inter font-style-italic font-weight-500
+                                    line-height-24px">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                            labore
+                            et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
+                            nisi
+                            ut
+                            aliquip ex ea commodo consequat.
+                        </div>
+                        <div class="divider bg-blue border-radius-1px margin-bottom-28px-md"></div>
+                        <div class="d-flex-md justify-content-space-between-md">
+                            <div class="customer-info">
+                                <h3 class="customer-name
+                                            margin-bottom-6px
+                                            font-Manrope font-weight-600">
+                                    Annara Veirmont
+                                </h3>
+                                <div class="customer-age
+                                            margin-bottom-28px
+                                            font-Manrope p3">
+                                    23 years of Age
+                                </div>
+                            </div>
+                            <!-- Position for owl navigation btn -->
+                            <div class="arrow-navigation d-flex">
 
-            </div>
-            <div class="right d-flex center-items-flex">
-                <div class="customer-background bg-yellow border-radius-12px pos-relative
-                            d-flex justify-content-center align-items-end">
-                    <img class="responsive-img-md customer-img pos-absolute" src="/images/customerImg1.png"
-                        alt="customer image">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="w-100 w-50-md d-flex center-items-flex pos-relative">
+                        <img class="pos-absolute pos-bottom-0 customer-background bg-yellow border-radius-12px"
+                            src="/images/customerBg.png" alt="">
+                        <img class="responsive-img-md customer-img z-index-0" src="/images/customerImg1.png"
+                            alt="customer image">
+                    </div>
                 </div>
             </div>
         </div>
@@ -464,6 +513,65 @@
         </div>
     </footer>
     <script src="/js/main.js"></script>
+    <!-- Dependency for owl carousel -->
+    <script src="js/jquery-3.7.1.min.js"></script>
+    <!-- Owl carousel script -->
+    <script src="js/owl.carousel.min.js"></script>
+
+    <script type="module">
+        // Wait all script loading
+        $(window).on('load', function () {
+            const prevArrowImg = '<img src="/images/leftArrow.png"/>'
+            const nextArrowImg = '<img src="/images/rightArrow.png"/>'
+            // new ResizeObserver(function () {
+            //     let ele = document.querySelector(".customer-feedback-container .arrow-navigation");
+            //     console.log(ele.offsetWidth);
+            //     console.log(ele.offsetHeight);
+            // }).observe(document.querySelector(".customer-feedback-container .arrow-navigation"))
+
+            let owl = $(".owl-carousel");
+            owl.owlCarousel({
+                nav: false,
+                center: true,
+                singleItem: true,
+                items: 1,
+                navText: [prevArrowImg, nextArrowImg],
+                responsiveRefreshRate: 0,
+                onInitialized: function () {
+                    // Delay 100ms to wait for the the layout has been loading
+                    setTimeout(function () {
+                        updateOwlNavPostion("onInitialized");
+                    }, 100);
+                },
+                onResized: function () {
+                    updateOwlNavPostion("onResized");
+                }
+            });
+            owl.on("refresh.owl.carousel", function () {
+                console.log("REFESHSED");
+            })
+
+            function updateOwlNavPostion(callBackType) {
+                console.log("Update nav pos")
+                const arrowNavigation = document.querySelector(".customer-feedback-container .arrow-navigation");
+                const owlNav = document.querySelector(".owl-nav");
+                if (callBackType === "onInitialized") {
+                    var carousel = owl.data('owl.carousel');
+                    carousel.options.nav = true;
+                    owl.trigger('refresh.owl.carousel');
+                    owlNav.querySelector(".owl-prev").classList.add("margin-right-28px");
+                    owlNav.classList.add("pos-absolute");
+                }
+
+                arrowNavigation.style.width = owlNav.offsetWidth + "px";
+                arrowNavigation.style.height = owlNav.offsetHeigth + "px";
+                owlNav.style.top = arrowNavigation.offsetTop + 'px';
+                owlNav.style.left = arrowNavigation.offsetLeft + 'px';
+            }
+
+        });
+    </script>
+
 </body>
 
 </html>
