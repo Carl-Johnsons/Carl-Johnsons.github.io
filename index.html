@@ -345,8 +345,8 @@
                         <div class="divider bg-blue border-radius-1px margin-bottom-28px-md"></div>
                         <div class="d-flex-md justify-content-space-between-md">
                             <div class="customer-info">
-                                <h3 class="customer-name
-                                            margin-bottom-6px
+                                <h3 class="customer-name 
+                                            no-margin margin-bottom-6px
                                             font-Manrope font-weight-600">
                                     Annara Veirmont
                                 </h3>
@@ -362,11 +362,16 @@
                             </div>
                         </div>
                     </div>
-                    <div class="w-100 w-50-md d-flex center-items-flex pos-relative">
-                        <img class="pos-absolute pos-bottom-0 customer-background bg-yellow border-radius-12px"
-                            src="/images/customerBg.png" alt="">
-                        <img class="responsive-img-md customer-img z-index-0" src="/images/customerImg1.png"
-                            alt="customer image">
+                    <div class="w-100 w-50-md d-flex center-items-flex align-items-end-md pos-relative">
+                        <div class="customer-background w-100 aspect-ratio-1-1 
+                                    pos-absolute pos-bottom-0 
+                                    bg-yellow
+                                    background-circle-5
+                                    inner-circle-border-width-13
+                                    inner-circle-border-color-#FFC233
+                                    border-radius-12px">
+                        </div>
+                        <img class="customer-img z-index-0" src="/images/customerImg1.png" alt="customer image">
                     </div>
                 </div>
                 <div class="item d-flex flex-direction-col-reverse
@@ -391,8 +396,8 @@
                         <div class="divider bg-blue border-radius-1px margin-bottom-28px-md"></div>
                         <div class="d-flex-md justify-content-space-between-md">
                             <div class="customer-info">
-                                <h3 class="customer-name
-                                            margin-bottom-6px
+                                <h3 class="customer-name 
+                                            no-margin margin-bottom-6px
                                             font-Manrope font-weight-600">
                                     Annara Veirmont
                                 </h3>
@@ -408,11 +413,16 @@
                             </div>
                         </div>
                     </div>
-                    <div class="w-100 w-50-md d-flex center-items-flex pos-relative">
-                        <img class="pos-absolute pos-bottom-0 customer-background bg-yellow border-radius-12px"
-                            src="/images/customerBg.png" alt="">
-                        <img class="responsive-img-md customer-img z-index-0" src="/images/customerImg1.png"
-                            alt="customer image">
+                    <div class="w-100 w-50-md d-flex center-items-flex align-items-end-md pos-relative">
+                        <div class="customer-background w-100 aspect-ratio-1-1 
+                                    pos-absolute pos-bottom-0 
+                                    bg-yellow
+                                    background-circle-5
+                                    inner-circle-border-width-13
+                                    inner-circle-border-color-#FFC233
+                                    border-radius-12px">
+                        </div>
+                        <img class="customer-img z-index-0" src="/images/customerImg1.png" alt="customer image">
                     </div>
                 </div>
             </div>
@@ -513,14 +523,15 @@
         </div>
     </footer>
     <script src="/js/main.js"></script>
+
     <!-- Dependency for owl carousel -->
     <script src="js/jquery-3.7.1.min.js"></script>
     <!-- Owl carousel script -->
     <script src="js/owl.carousel.min.js"></script>
 
-    <script type="module">
-        // Wait all script loading
-        $(window).on('load', function () {
+    <script>
+        // Wait the dom load
+        document.addEventListener("DOMContentLoaded", function () {
             const prevArrowImg = '<img src="/images/leftArrow.png"/>'
             const nextArrowImg = '<img src="/images/rightArrow.png"/>'
             // new ResizeObserver(function () {
@@ -547,16 +558,11 @@
                     updateOwlNavPostion("onResized");
                 }
             });
-            owl.on("refresh.owl.carousel", function () {
-                console.log("REFESHSED");
-            })
-
             function updateOwlNavPostion(callBackType) {
-                console.log("Update nav pos")
                 const arrowNavigation = document.querySelector(".customer-feedback-container .arrow-navigation");
                 const owlNav = document.querySelector(".owl-nav");
                 if (callBackType === "onInitialized") {
-                    var carousel = owl.data('owl.carousel');
+                    let carousel = owl.data('owl.carousel');
                     carousel.options.nav = true;
                     owl.trigger('refresh.owl.carousel');
                     owlNav.querySelector(".owl-prev").classList.add("margin-right-28px");
@@ -571,7 +577,8 @@
 
         });
     </script>
-
+    <!-- Script for background circle, this script must be the last script -->
+    <script src="/js/backgroundCircle.js"></script>
 </body>
 
 </html>

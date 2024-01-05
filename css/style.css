@@ -48,12 +48,11 @@
     --item-background-width: 370px;
     --item-background-height: 330px;
 
-    --customer-background-width-sm: 339px;
-    --customer-background-height-sm: 337px;
-    --customer-background-width: 470px;
-    --customer-background-height: 470px;
-    --customer-img-width: clamp(307px, calc(307px + 8vw), 426px);
-    --customer-img-height: clamp(396px, calc(396px + 11vw), 550px);
+    --customer-background-max-width: 470px;
+    /* clamp(339px, calc(339px + 9vw), 470px); */
+    /* --customer-background-height: clamp(337px, calc(337px + 9vw), 470px); */
+    --customer-img-width: clamp(307px, calc(307px + 9vw), 426px);
+    --customer-img-height: clamp(396px, calc(396px + 11vh), 550px);
 
     --crisps-store-locator-container-height-sm: 342px;
     --crisps-store-locator-container-height: 468px;
@@ -314,6 +313,10 @@ img.crisp-icon {
     background-size: cover;
 }
 
+img.customer-img {
+    max-width: var(--customer-img-width);
+}
+
 /* Atomic css below */
 /* Container */
 .container {
@@ -334,8 +337,8 @@ img.crisp-icon {
 }
 
 .customer-feedback-container .customer-background {
-    min-width: var(--customer-background-width-sm);
-    height: auto;
+    max-width: var(--customer-background-max-width);
+    /* height: var(--customer-background-width); */
 }
 
 .crisps-store-locator-container {
@@ -393,6 +396,14 @@ img.responsive-img {
     position: relative;
 }
 
+.position-center {
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+}
+
 .pos-left-0 {
     left: 0;
 }
@@ -430,6 +441,10 @@ img.responsive-img {
     width: 30%;
 }
 
+.w-0 {
+    width: 0;
+}
+
 .w-fit-content {
     width: fit-content;
 }
@@ -448,6 +463,10 @@ img.responsive-img {
 
 .h-30 {
     height: 30%;
+}
+
+.h-0 {
+    height: 0;
 }
 
 /* Outline */
@@ -605,6 +624,11 @@ img.responsive-img {
     height: var(--lay-logo-height);
 }
 
+/* Aspect ratio */
+.aspect-ratio-1-1 {
+    aspect-ratio: 1/1;
+}
+
 /* margin, padding, border */
 .box-sizing-border-box {
     box-sizing: border-box;
@@ -623,6 +647,7 @@ img.responsive-img {
     padding-top: 100px;
     padding-bottom: 100px;
 }
+
 
 .no-margin {
     margin: 0;
@@ -1399,10 +1424,6 @@ img.responsive-img {
         max-height: var(--footer-chip-img-height);
     }
 
-    .customer-background {
-        max-width: var(--customer-background-width);
-        height: auto;
-    }
 
     .footer-container {
         height: var(--footer-container-height);
@@ -1412,10 +1433,7 @@ img.responsive-img {
         width: var(--footer-left-section-width);
     }
 
-    img.customer-img {
-        max-width: var(--customer-img-width);
-        max-height: var(--customer-img-height);
-    }
+
 
     .item-detail {
         grid-template-rows: 1fr 0.5fr 0.5fr 3fr;

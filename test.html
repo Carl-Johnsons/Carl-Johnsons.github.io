@@ -5,40 +5,124 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="/css/owl.carousel.min.css">
-    <link rel="stylesheet" href="/css/owl.theme.default.css">
     <style>
+        body {
+            height: 100vh;
+            width: 100vw;
+        }
+
         .item {
-            background-color: aquamarine;
+            width: 400px;
+            height: 500px;
+            background-color: blueviolet;
+        }
+
+        .pos-relative {
+            position: relative;
+        }
+
+        .pos-absolute {
+            position: absolute;
+        }
+
+        .position-center {
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            margin: auto;
+        }
+
+        .inner-circle {
+            border-style: solid;
+            border-color: black;
+            border-radius: 50%;
         }
     </style>
 </head>
 
 <body>
-    <!-- Set up your HTML -->
-    <div class="owl-carousel owl-theme">
-        <div> Your Content </div>
-        <div> Your Content </div>
-        <div> Your Content </div>
-        <div> Your Content </div>
-        <div> Your Content </div>
-        <div> Your Content </div>
-        <div> Your Content </div>
+    <div class="pos-relative">
+        <div class="item background-circle-12
+        inner-circle-border-width-5
+        inner-circle-border-color-yellow
+        pos-absolute">
+
+        </div>
     </div>
 
-    <!-- Dependency for owl carousel -->
-    <script src="js/jquery-3.7.1.min.js"></script>
-    <!-- Owl carousel script -->
-    <script src="js/owl.carousel.min.js"></script>
-
-    <script>
-        $('.owl-carousel').owlCarousel({
-            loop: true,
-            margin: 10,
-            nav: true,
-            items: 1,
-        })
-    </script>
+    <h1>Lo</h1>
+    <h2>Lo</h2>
 </body>
+<script>
+    const BACKGROUND_CIRCLE = "background-circle-";
+    const INNER_CIRCLE_BORDER_WIDTH = "inner-circle-border-width-";
+    const DEFAULT_BORDER_WIDTH = "10px";
+    const INNER_CIRCLE_BORDER_COLOR = "inner-circle-border-color-";
+    let backgroundCircles = document.querySelectorAll(`[class*='${BACKGROUND_CIRCLE}']`);
+    let h1 = document.querySelector("h1");
+    let h2 = document.querySelector("h2");
+    for (let backgroundCircle of backgroundCircles) {
+        let width = backgroundCircle.offsetWidth;
+        let height = backgroundCircle.offsetHeight;
+        minValue = width
+        if (minValue > height) {
+            minValue = height;
+        }
+        let eleClassList = backgroundCircle.classList;
+        let innerCircles = getClassValue(eleClassList, BACKGROUND_CIRCLE, -1);
+        // Edge case: if not the number
+        if (innerCircles === -1) {
+            continue;
+        }
+        let innerCircleBorderWidth = getClassValue(eleClassList, INNER_CIRCLE_BORDER_WIDTH, DEFAULT_BORDER_WIDTH);
+        innerCircleBorderWidth = parseInt(innerCircleBorderWidth.match(/\d+/g));
+
+        let innerCircleBorderColor = getClassValue(eleClassList, INNER_CIRCLE_BORDER_COLOR, "black");
+
+        h1.innerText = innerCircleBorderWidth;
+        minValue -= (innerCircleBorderWidth * 2)
+        margin = (minValue / innerCircles);
+        for (let i = 0; i < innerCircles; i++) {
+            let div = generateEle("div", "inner-circle pos-absolute position-center");
+            div.style.width = minValue + "px";
+            div.style.height = minValue + "px";
+            div.style.borderWidth = innerCircleBorderWidth + "px";
+            div.style.borderColor = innerCircleBorderColor;
+            div.style.borderRadius = "50%";
+            backgroundCircle.append(div);
+            minValue -= margin;
+        }
+        h2.innerText = height;
+    }
+    /*
+    Edge case: 
+        "inner-circle-border-width"
+        "inner-circle-border-width-"
+        ""
+    */
+    function getClassValue(elementClassList, prefixClassName, defaultValue) {
+        let value = Array.from(elementClassList).find(className => className.startsWith(prefixClassName));
+
+        if (!value) {
+            value = `${prefixClassName}${defaultValue}`;
+        }
+        value = getLastElement(value, "-");
+        // inner-circle-border-width- this testcase need a second time validation
+        if (!value) {
+            value = defaultValue;
+        }
+        return value;
+    }
+    function getLastElement(str, seperator) {
+        let splitArray = str.split(seperator);
+        return splitArray[splitArray.length - 1]
+    }
+    function generateEle(tag, className) {
+        let element = document.createElement(tag);
+        element.classList = className;
+        return element
+    }
+</script>
 
 </html>
