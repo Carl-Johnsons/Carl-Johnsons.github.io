@@ -48,9 +48,16 @@
     --item-background-width: 370px;
     --item-background-height: 330px;
 
+    --popular-item-background-max-width: 570px;
+    --popular-item-background-max-height: 484px;
+    --popular-item-background-2-max-height: 384px;
+    --popular-item-max-width: 324px;
+    --popular-item-max-height: 484px;
+
+    --play-video-img-max-width: 20px;
+    --play-video-img-max-height: 20px;
+
     --customer-background-max-width: 470px;
-    /* clamp(339px, calc(339px + 9vw), 470px); */
-    /* --customer-background-height: clamp(337px, calc(337px + 9vw), 470px); */
     --customer-img-width: clamp(307px, calc(307px + 9vw), 426px);
     --customer-img-height: clamp(396px, calc(396px + 11vh), 550px);
 
@@ -317,6 +324,50 @@ img.customer-img {
     max-width: var(--customer-img-width);
 }
 
+img.popular-item-img {
+    max-width: var(--popular-item-max-width);
+    max-height: var(--popular-item-max-height);
+}
+
+img.playVideoImg{
+    max-width: var(--play-video-img-max-width);
+    max-height: var(--play-video-img-max-height);
+}
+
+.popular-item-container .owl-stage {
+    display: flex;
+    align-items: flex-end;
+}
+
+.popular-item-1 div.popular-item-background {
+    max-width: var(--popular-item-background-max-width);
+    max-height: var(--popular-item-background-max-height);
+}
+
+.popular-item-2 div.popular-item-background {
+    max-width: var(--popular-item-background-max-width);
+    max-height: var(--popular-item-background-2-max-height);
+}
+
+/* Custom owl dots */
+.navigate-item-button>button {
+    background: transparent;
+    border: 0;
+}
+
+div.popular-item-container .owl-dot span {
+    display: inline-block;
+    width: 28px;
+    height: 4px;
+    margin-right: 6px;
+    border-radius: 2px;
+    background-color: #D5DDDF;
+}
+
+div.popular-item-container .owl-dot.active span {
+    background-color: #182327;
+}
+
 /* Atomic css below */
 /* Container */
 .container {
@@ -412,6 +463,10 @@ img.responsive-img {
     right: 0;
 }
 
+.pos-top-neg-20 {
+    top: -20%;
+}
+
 .pos-top-0 {
     top: 0;
 }
@@ -431,6 +486,10 @@ img.responsive-img {
 
 .w-80 {
     width: 80%;
+}
+
+.w-70 {
+    width: 70%;
 }
 
 .w-50 {
@@ -668,6 +727,10 @@ img.responsive-img {
 
 .margin-top-30px {
     margin-top: 30px;
+}
+
+.margin-top-100px {
+    margin-top: 100px;
 }
 
 .margin-right-6px {
@@ -1064,6 +1127,23 @@ img.responsive-img {
 /* From 768px md to lg*/
 @media screen and (min-width: 768px) {
 
+    /* position */
+    .pos-absolute-md {
+        position: absolute;
+    }
+
+    .pos-relative-md {
+        position: relative;
+    }
+
+    .pos-left-50-md {
+        left: 50%;
+    }
+
+    .pos-right-0-md {
+        right: 0;
+    }
+
     /* Sizing */
     .w-100-md {
         width: 100%;
@@ -1433,8 +1513,6 @@ img.responsive-img {
         width: var(--footer-left-section-width);
     }
 
-
-
     .item-detail {
         grid-template-rows: 1fr 0.5fr 0.5fr 3fr;
         grid-template-columns: repeat(auto-fit, minmax(0, 1fr));
@@ -1471,40 +1549,10 @@ img.responsive-img {
         padding: 0 70px;
     }
 
-    .d-grid-left-right-md {
-        display: grid;
-        grid-template-rows: 1fr;
-        grid-template-columns: 1fr 1fr;
-        grid-template-areas:
-            'left right';
-    }
-
     .item-list.d-grid {
         grid-template-rows: repeat(3, 1fr);
         grid-template-columns: repeat(2, minmax(0, var(--item-background-width)));
         gap: 80px 0px;
-    }
-
-    .popular-item-container .popular-item-list.d-grid {
-        grid-template-rows: 0.455fr 1fr;
-        grid-template-columns: 1fr 1fr;
-        gap: 0px 30px;
-        grid-template-areas:
-            'popular-item-1 title'
-            'popular-item-1 popular-item-2';
-    }
-
-    .popular-item-container .title {
-        grid-area: title;
-    }
-
-    .popular-item-container .popular-item-1 {
-        align-self: end;
-        grid-area: popular-item-1;
-    }
-
-    .popular-item-container .popular-item-2 {
-        grid-area: popular-item-2;
     }
 
 
@@ -1523,5 +1571,26 @@ img.responsive-img {
         grid-template-rows: repeat(2, 1fr);
         grid-template-columns: repeat(3, minmax(0, var(--item-background-width)));
         gap: 80px 0px;
+    }
+}
+
+/* From 1200xl to xxl*/
+@media screen and (min-width: 1200px) {
+
+    /* position */
+    .pos-absolute-xl {
+        position: absolute;
+    }
+
+    .pos-relative-xl {
+        position: relative;
+    }
+
+    .pos-left-50-xl {
+        left: 50%;
+    }
+
+    .pos-right-0-xl {
+        right: 0;
     }
 }
