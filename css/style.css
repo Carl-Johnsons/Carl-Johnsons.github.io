@@ -274,22 +274,18 @@ img.crisp-icon {
     gap: 80px 0px;
 }
 
-.item-list.d-grid .cart-btn.align-self-end {
-    transform: translate(140%, 61%);
+.item-list.d-grid .add-to-cart-btn {
+    left: 70%;
+    bottom: -17%;
 }
 
 .item-list.d-grid .item-image-wrapper {
     margin-bottom: 18px;
 }
 
-.item-list.d-grid .item-info>* {
-    margin-bottom: 8px;
+.item-list .item-background {
+    max-height: 370px;
 }
-
-.item-list-container.container>* {
-    margin-bottom: 70px;
-}
-
 
 .lays-snack-chip-img-background {
     background-image: url(/images/laysSnackChipBGSm.png);
@@ -857,6 +853,10 @@ img.responsive-img {
 
 .margin-bottom-70px {
     margin-bottom: 70px;
+}
+
+.margin-bottom-140px {
+    margin-bottom: 140px;
 }
 
 /*  */
@@ -1504,7 +1504,7 @@ img.responsive-img {
     .item-list.d-grid {
         grid-template-rows: repeat(3, 1fr);
         grid-template-columns: repeat(2, minmax(0, var(--item-background-width)));
-        gap: 80px 0px;
+        gap: 130px 10px;
     }
 
 
@@ -1526,6 +1526,7 @@ img.responsive-img {
     .item-detail .item-info {
         width: calc(300px + 12vw);
         max-width: var(--item-detail-item-info-max-width);
+        padding-right: var(--container-padding-right);
     }
 }
 
@@ -1534,7 +1535,7 @@ img.responsive-img {
     .item-list.d-grid {
         grid-template-rows: repeat(2, 1fr);
         grid-template-columns: repeat(3, minmax(0, var(--item-background-width)));
-        gap: 80px 0px;
+        gap: 130px 10px;
     }
 }
 
